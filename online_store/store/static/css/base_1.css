@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background: silver;
+  /* background-image: url("../images/lotus-design-n-print-WgkA3CSFrjc-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  height: 100%; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #726f6f;
+}
+
+.product-list h2 {
+  margin: 20px;
+}
+
+.product-list .item {
+  width: 25%;
+  margin: 20px;
+  /* для доработки */
+  /* padding-bottom: 80px; */
+  float: left;
+  text-align: center;
+  line-height: 1.2;
+  border: 2px solid rgb(207, 200, 200);
+  border-radius: 5px;
+  box-shadow: 2px 2px black;
+  background: #fff;
+}
+
+.product-list .item img {
+  width: 100%;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+
+/* .product-list .text {
+  text-align: left;
+  padding-left: 20px;
+} */
+
+#header {
+  background: #7fc7ff;
+  padding: 15px 100px;
+  font-size: 18px;
+  overflow: hidden;
+}
+
+#header .logo {
+  font-family: "Roboto", sans-serif;
+  color: black;
+  font-size: 18px;
+  margin-right: 30px;
+}
+
+#header .logo:hover {
+  color: #726f6f;
+}
+
+/* #subheader {
+  background: #ececec;
+  color: #444;
+  padding: 15px 100px;
+  overflow: auto;
+} */
+
+.header-btr {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .header-btr {
+    background: #7fc7ff;
+    font-size: 18px;
+    padding-inline: 10px;
+    border: none;
+    display: block;
+    cursor: pointer;
+  }
+
+  #header .drop:hover .header-list {
+    display: block;
+    position: absolute;
+    background: #7fc7ff;
+    border-radius: 6px 6px;
+  }
+
+  .header-list {
+    display: none;
+  }
+
+  #header .header-list .logo {
+    display: block;
+    padding: 15px 10px 10px 10px;
+    font-size: 18px;
+  }
+}
+
+/* #subheader .cart {
+  float: right;
+  padding-top: 4px;
+} */
+
+#content {
+  padding: 0 100px;
+  overflow: auto;
+}
+
+#sidebar h2 {
+  margin: 0 0 40px 0;
+}
+
+#sidebar {
+  width: 200px;
+  padding: 20px 20px 0 0;
+  float: left;
+}
+
+#sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+
+#sidebar ul li {
+  margin: 0;
+  list-style: none;
+  padding: 10px 14px;
+}
+
+#sidebar ul li a {
+  display: block;
+}
+
+#sidebar ul li.selected {
+  background: #7fc7ff;
+  border-radius: 5px;
+}
+
+#sidebar ul li.selected a {
+  color: black;
+}
+
+.sidebar-btr {
+  display: block;
+}
+
+#main {
+  float: left;
+  width: 79%;
+  margin-right: -220px;
+  overflow: hidden;
+}
+
+/* .modalBackground {
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.modalActive {
+  position: absolute;
+  width: 350px;
+  height: 495px;
+  top: calc(50% - 250px);
+  left: calc(50% - 175px);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  cursor: default;
+  padding: 40px 20px;
+}
+
+.modalClose {
+  font-family: var(--font-regular);
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.modalClose img {
+  margin: 3px;
+  width: 24px;
+  height: 24px;
+}
+
+.modalWindow {
+  position: relative;
+} */

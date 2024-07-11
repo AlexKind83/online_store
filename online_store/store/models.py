@@ -2,6 +2,10 @@ from django.db import models
 from django.urls import reverse
 
 
+from django.db import models
+from django.urls import reverse
+
+
 class Category(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
@@ -27,7 +31,6 @@ class Product(models.Model):
     slug = models.CharField(max_length=200)
     image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True, verbose_name='Изображение')
     description = models.TextField(blank=True, verbose_name='Описание')
-    characteristics = models.TextField(blank=True, verbose_name='Характеристики')
     price = models.IntegerField(verbose_name='Цена')
     available = models.BooleanField(default=True, verbose_name='Наличие')
     created = models.DateTimeField(auto_now_add=True, verbose_name='Создан')
@@ -44,4 +47,4 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         """Автоматизация url адресов"""
-        return reverse('store:product_selected', args=[self.pk, self.slug])
+        return reverse('store:product_detail', args=[self.pk, self.slug])

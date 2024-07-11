@@ -6,31 +6,58 @@
 {% endblock %}
 
 {% block content %}
-    <div id="sidebar">
-        <h3>Categories</h3>
-        <ul>
-            <li {% if not category %}class="selected"{% endif %}>
-                <a href="{% url 'store:product_list' %}">All</a>
-            </li>
-            {% for c in categories %}
-            <li {% if category.slug == c.slug %}class="selected"{% endif %}>
-                <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
-            </li>
-            {% endfor %}
-        </ul>
+    <div id="sidebar" class="dropdown">
+        <h2 class="dropbtn">Каталог</h2>
+        <div class="dropdown-content">
+            <ul>
+                <li {% if not category %} class="selected" {% endif %}>
+                    <a href="{% url 'store:product_list' %}">Все категорий</a>
+                </li >
+                {% for c in categories %}
+                <li {% if category.slug == c.slug %} class=selected {% endif %}>
+                    <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
     <div id="main" class="product-list">
-        <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
+        <h2>{% if category %}{{ category.name }}{% else %}Продукция{% endif %}</h2>
         {% for product in products %}
         <div class="item">
             <a href="{{ product.get_absolute_url }}">
-                <img src="{% if product.image %}{{ product.image.url }}{% else %}
-                {% static 'img/no_image.png' %}{% endif %}" alt="">
+                <img src="{% if product.image %}{{ product.image.url }}
+                {% else %}{% static 'img/no_image.png' %}{% endif %}" alt="">
             </a>
-            <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+            <a class="text" href="{{ product.get_absolute_url }}">{{ product.name }}</a>
             <br>
-            ${{ product.price }}
+            <div class="text">
+            {% if product.price < 10000 %}
+            {{ product.price|get_digit:"4" }}
+            {{ product.price|get_digit:"3" }}{{ product.price|get_digit:"2" }}{{ product.price|get_digit:"1" }}
+            &#x20bd
+
+            {% elif product.price < 100000 %}
+            {{ product.price|get_digit:"5" }}{{ product.price|get_digit:"4" }}
+            {{ product.price|get_digit:"3" }}{{ product.price|get_digit:"2" }}{{ product.price|get_digit:"1" }}
+            &#x20bd
+
+            {% elif product.price < 1000000 %}
+            {{ product.price|get_digit:"6" }}{{ product.price|get_digit:"5" }}{{ product.price|get_digit:"4" }}
+            {{ product.price|get_digit:"3" }}{{ product.price|get_digit:"2" }}{{ product.price|get_digit:"1" }}
+            &#x20bd
+            {% endif %}
+            </div>
         </div>
         {% endfor %}
     </div>
+<!--    <div class="modalBackground">-->
+<!--        <div class="modalActive">-->
+<!--            <div class="modalClose">-->
+<!--                <img src="{% static 'img/no_image.png' %}" alt="">-->
+<!--            </div>-->
+<!--            <div class="modalWindow"></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <script src="{% static 'js/script.js' %}"></script>-->
 {% endblock %}

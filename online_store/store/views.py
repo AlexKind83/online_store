@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Product
+from django.shortcuts import render
 
 
 def product_list(request, category_slug=None):
@@ -13,7 +14,6 @@ def product_list(request, category_slug=None):
     return render(request, 'store/product/list.html', context)
 
 
-def product_selected(request, pk, slug):
+def product_detail(request, pk, slug):
     product = get_object_or_404(Product, pk=pk, slug=slug, available=True)
-    return render(request, 'store/product/selected.html', {'product': product})
-
+    return render(request, 'store/product/detail.html', {'product': product})

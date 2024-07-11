@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 # Применил namespace= пространство имен, во избежание конфликта похожих имен.
 # Это позволит автоматизаций url адресов с помощью функций get_absolute_url()
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('store.urls', namespace='store')),
