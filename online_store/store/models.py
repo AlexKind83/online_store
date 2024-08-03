@@ -48,3 +48,6 @@ class Product(models.Model):
     def get_absolute_url(self):
         """Автоматизация url адресов"""
         return reverse('store:product_detail', args=[self.pk, self.slug])
+
+
+

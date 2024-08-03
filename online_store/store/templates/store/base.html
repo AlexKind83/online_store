@@ -4,32 +4,131 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
-    <link rel="stylesheet" href="{% static 'css/base_1.css' %}">
-<!--    <link rel="stylesheet" href="{% static 'css/base.css' %}">-->
-<!--    <link rel="stylesheet" href="{% static 'css/pdf.css' %}">-->
+    <title>{% if title %}Home{% else %}{% block title %}{% endblock %}{% endif %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/medias.css' %}">
+    <link rel="stylesheet" href="{% static 'css/site-info.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!--    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css/docs/5.3/assets/css/docs.css" rel="stylesheet">-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
-    <div id="header">
-        <div class="drop">
-            <button class="header-btr">&#9776;</button>
-            <div class="header-list">
-                <a href="/" class="logo">My store</a>
-                <a href="/" class="logo">Информация</a>
-                <a href="/" class="logo">Войти</a>
-            </div>
+    {% url 'store:main_page' as main_page_url %}
+    {% url 'store:product_list' as product_list_url %}
+
+<header>
+    {% block header %}
+    {% if request.path == main_page_url %}
+
+    <div class="dropdown">
+        <img  data-bs-toggle="dropdown"
+             data-bs-auto-close="outside" aria-expanded="false"
+             src="{% static 'img/free-icon-font-menu-burger-3917762 (2).png' %}">
+
+        <div class="navbar-invisibility ">
+            <a href="{% url 'store:main_page' %}" class="logo">Главная</a>
+            <a href="{% url 'store:site_info' %}" class="logo">Информация</a>
+
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'logout' %}">Выход</a>
+            {% else %}
+            <a href="{% url 'login' %}">Вход</a>
+            {% endif %}
+
+            {% if request.user.is_authenticated %}
+            Пользователь: {{ request.user.first_name|default:request.user.username }}
+            {% endif %}
+
+            <a href="#"><img src="{% static 'img/basket(24).png' %}" alt=""></a>
+            <p>9</p>
         </div>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" tabindex="1" href="{% url 'store:main_page' %}">Главная</a></li>
+        <li><a class="dropdown-item correction-indent-up" tabindex="2" href="{% url 'store:site_info' %}">Информация</a></li>
+        <li><a class="dropdown-item correction-indent-up-down" tabindex="3" href="#">Корзина</a></li>
+          <li><hr color="black" class="dropdown-divider"></li>
+
+          {% if request.user.is_authenticated %}
+        <li><a class="dropdown-item dropdown-item correction-indent-up" tabindex="4" href="{% url 'logout' %}">Выход</a></li>
+          {% else %}
+        <li><a class="dropdown-item dropdown-item correction-indent-up" tabindex="4" href="{% url 'logout' %}">Вход</a></li>
+          {% endif %}
+
+      </ul>
     </div>
-<!--    <div id="subheader">-->
-<!--        <div class="card">-->
-<!--            Корзина пуста.-->
-<!--        </div>-->
-<!--    </div>-->
-    <div id="content">
+
+    {% else %}
+
+    <div class="dropdown">
+        <img  data-bs-toggle="dropdown"
+             data-bs-auto-close="outside" aria-expanded="false"
+             src="{% static 'img/free-icon-font-menu-burger-3917762 (2).png' %}">
+
+        <div class="navbar-invisibility ">
+            <a href="{% url 'store:main_page' %}" class="logo">Главная</a>
+            <a href="{% url 'store:product_list' %}" class="logo">Каталог</a>
+
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'logout' %}">Выход</a>
+            {% else %}
+            <a href="{% url 'login' %}">Вход</a>
+            {% endif %}
+
+            {% if request.user.is_authenticated %}
+            Пользователь: {{ request.user.first_name|default:request.user.username }}
+            {% endif %}
+
+            <a href="#"><img src="{% static 'img/basket(24).png' %}" alt=""></a>
+            <p>9</p>
+        </div>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" tabindex="1" href="{% url 'store:main_page' %}">Главная</a></li>
+        <li><a class="dropdown-item correction-indent-up" tabindex="2" href="{% url 'store:product_list' %}">Каталог</a></li>
+        <li><a class="dropdown-item correction-indent-up-down" tabindex="3" href="#">Корзина</a></li>
+          <li><hr color="black" class="dropdown-divider"></li>
+        <li><a class="dropdown-item dropdown-item correction-indent-up" tabindex="4" href="{% url 'login' %}">Вход</a></li>
+      </ul>
+</div>
+
+    {% endif %}
+    {% endblock %}
+</header>
+
+
+<section>
+    <div class="content">
         {% block content %}
         {% endblock %}
     </div>
-<!--    <script src="{% static 'js/script.js' %}"></script>-->
+</section>
+
+
+<footer>
+    {% block footer %}
+    {% if request.path == product_list_url %}
+
+    <div class="footer-decoration">
+        <a href="#"><img src="{% static 'img/free-icon-vk-2111747 (1).png' %}" alt=""></a>
+        <a href="#"><img src="{% static 'img/free-icon-telegram-2111673 (1).png' %}" alt=""></a>
+        <h6 class="box-4">Автор: Калинкин Александр Васильевич</h6>
+    </div>
+
+    {% else %}
+
+    <div class="footer-decoration-main-page">
+        <a href="#"><img src="{% static 'img/free-icon-vk-2111747 (1).png' %}" alt=""></a>
+        <a href="#"><img src="{% static 'img/free-icon-telegram-2111673 (1).png' %}" alt=""></a>
+        <h6 class="box-4">Автор: Калинкин Александр Васильевич</h6>
+    </div>
+
+    {% endif %}
+    {% endblock %}
+</footer>
+
+<script src="{% static 'js/script.js' %}"></script>
+
 </body>
 </html>

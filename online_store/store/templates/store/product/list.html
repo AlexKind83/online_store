@@ -6,10 +6,11 @@
 {% endblock %}
 
 {% block content %}
-    <div id="sidebar" class="dropdown">
-        <h2 class="dropbtn">Каталог</h2>
-        <div class="dropdown-content">
-            <ul>
+    <div class="menu">
+        <div class="menu-catalog">
+        <a class="box-1" href="#" data-bs-toggle="dropdown">Каталог<img src="{% static 'img/free-icon-font-apps-3917658 (1).png' %}"></a>
+
+           <ul class="dropdown-menu">
                 <li {% if not category %} class="selected" {% endif %}>
                     <a href="{% url 'store:product_list' %}">Все категорий</a>
                 </li >
@@ -20,18 +21,20 @@
                 {% endfor %}
             </ul>
         </div>
+        <div class="menu-product-text box-2"><h4>{% if category %}{{ category.name }}{% else %}Вся продукция{% endif %}</h4></div>
     </div>
-    <div id="main" class="product-list">
-        <h2>{% if category %}{{ category.name }}{% else %}Продукция{% endif %}</h2>
+
+    <div class="product-list">
+
+        {% for card_multiplier in card_multipliers %}
         {% for product in products %}
-        <div class="item">
+        <div class="card">
             <a href="{{ product.get_absolute_url }}">
                 <img src="{% if product.image %}{{ product.image.url }}
                 {% else %}{% static 'img/no_image.png' %}{% endif %}" alt="">
             </a>
-            <a class="text" href="{{ product.get_absolute_url }}">{{ product.name }}</a>
-            <br>
-            <div class="text">
+            <a class="product-text" href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+            <div class="price">
             {% if product.price < 10000 %}
             {{ product.price|get_digit:"4" }}
             {{ product.price|get_digit:"3" }}{{ product.price|get_digit:"2" }}{{ product.price|get_digit:"1" }}
@@ -50,14 +53,16 @@
             </div>
         </div>
         {% endfor %}
+        {% endfor %}
     </div>
-<!--    <div class="modalBackground">-->
-<!--        <div class="modalActive">-->
-<!--            <div class="modalClose">-->
-<!--                <img src="{% static 'img/no_image.png' %}" alt="">-->
-<!--            </div>-->
-<!--            <div class="modalWindow"></div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <script src="{% static 'js/script.js' %}"></script>-->
+{% endblock %}
+
+
+<!--здесь обязательное присутствие блока footer-->
+{% block footer %}
+    <div class="footer-decoration">
+        <a href="#"><img src="{% static 'img/free-icon-vk-2111747 (1).png' %}" alt=""></a>
+        <a href="#"><img src="{% static 'img/free-icon-telegram-2111673 (1).png' %}" alt=""></a>
+        <h6 class="box-4">Автор: Калинкин Александр Васильевич</h6>
+    </div>
 {% endblock %}

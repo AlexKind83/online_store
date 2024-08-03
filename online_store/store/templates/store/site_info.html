@@ -1,0 +1,25 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block title %}Информация{% endblock %}
+
+
+
+{% block content %}
+<div id="info">
+    <div class="info-sidebar">
+        <ul>
+        <li><button onclick="display('infofirstbox')" tabindex="1">Доставка и оплата</button></li>
+        <li><button onclick="display('infosecondbox')" tabindex="2">Контактная информация</button></li>
+        <li><button onclick="display('infothreebox')" tabindex="3">Про нас</button></li>
+        </ul>
+    </div>
+
+    <div class="info-article">
+        <div id="siteinfotext"></div>
+    </div>
+</div>
+{% endblock %}
+
+<!--удален header-->
+<!--удален footer-->

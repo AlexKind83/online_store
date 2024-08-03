@@ -1,0 +1,20 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}Добро пожаловать{% endblock %}
+
+
+{% block content %}
+    <div>
+        <h1 class="main-decoration-main-page">Магазин мебели "Эльф"</h1>
+    </div>
+
+<h1>Добро пожаловать {{ new_user.first_name }}!</h1>
+<p>
+    Ваша учетная запись успешно создана.
+    Теперь вы можете <a href="{% url 'login' %}">войти в систему</a>
+</p>
+{% endblock %}
+
+
+<!--удален header-->
+<!--удален footer-->

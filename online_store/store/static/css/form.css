@@ -1,0 +1,15 @@
+a:hover {
+  color: #00a74f;
+}
+
+.errorlist {
+  /* color:#cc0033;
+    float:left;
+    clear:both;
+    padding-left:10px; */
+  display: none;
+}
+
+form ul {
+  display: none;
+}

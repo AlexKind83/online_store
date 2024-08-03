@@ -1,0 +1,40 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}Вход в систему{% endblock %}
+
+
+{% block content %}
+
+<h3>Авторизация</h3>
+
+{% if form.errors %}
+<p>
+    Ваши, имя пользователя и пароль не совпали.
+    Пожалуйста, попробуйте снова.
+</p>
+{% else %}
+<p>
+    Если у вас нет учетной записи
+    <a href="{% url 'register' %}">Зарегистрироваться</a>
+</p>
+{% endif %}
+
+<div class="login-form">
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}">
+        <p><input type="submit" value="Вход"></p>
+    </form>
+    <p>
+        <a href="{% url 'password_reset' %}">
+            Забыли свой пароль?
+        </a>
+    </p>
+</div>
+
+{% endblock %}
+
+
+<!--удален header-->
+<!--удален footer-->

@@ -1,0 +1,19 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}Создать учетную запись{% endblock %}
+
+
+{% block content %}
+
+<h3>Создать учетную запись</h3>
+<form method="POST">
+    {{ user_form.as_p }}
+    {% csrf_token %}
+    <p><input type="submit" value="Создать учетную запись"></p>
+</form>
+
+{% endblock %}
+
+
+<!--удален header-->
+<!--удален footer-->

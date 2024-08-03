@@ -1,0 +1,30 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+
+
+{% block content %}
+    <div class="menu">
+        <div class="menu-catalog">
+        <a class="box-1" href="#" data-bs-toggle="dropdown">Каталог<img src="{% static 'img/free-icon-font-apps-3917658 (1).png' %}"></a>
+
+           <ul class="dropdown-menu">
+                <li {% if  category %} class="selected" {% endif %}>
+                    <a href="{% url 'store:product_list' %}">Все категорий</a>
+                </li >
+                {% for c in categories %}
+                <li {% if category.slug == c.slug %} class=selected {% endif %}>
+                    <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="main">Магазин мебели "Эльф"</h1>
+    </div>
+{% endblock %}
+
+<!--удален header-->
+<!--удален footer-->

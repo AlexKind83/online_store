@@ -1,0 +1,21 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}Выход из системы{% endblock %}
+
+
+{% block content %}
+
+    <div>
+        <h1 class="main-decoration-main-page">Магазин мебели "Эльф"</h1>
+    </div>
+
+<p>
+    Вы успешно вышли из системы.
+    Ты можешь<a href="{% url 'login' %}">войдите в систему</a>
+</p>
+
+{% endblock %}
+
+
+<!--удален header-->
+<!--удален footer-->

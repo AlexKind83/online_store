@@ -1,0 +1,435 @@
+@media (max-width: 2550px) {
+  .product-list {
+    column-gap: 70px;
+    row-gap: 30px;
+  }
+}
+
+@media (max-width: 2330px) {
+  .product-list {
+    column-gap: 60px;
+    row-gap: 20px;
+  }
+}
+
+@media (max-width: 2100px) {
+  .product-list {
+    column-gap: 50px;
+    row-gap: 10px;
+  }
+}
+
+@media (max-width: 1920px) {
+  .product-list {
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 60px;
+    row-gap: 20px;
+  }
+}
+
+@media (max-width: 1800px) {
+  .product-list {
+    column-gap: 50px;
+    row-gap: 10px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .product-list {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 60px;
+    row-gap: 20px;
+  }
+}
+
+@media (max-width: 1520px) {
+  .product-list {
+    column-gap: 50px;
+    row-gap: 10px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .menu-product-text {
+    margin: 20px 70px;
+  }
+  .product-list {
+    column-gap: 50px;
+    row-gap: 10px;
+  }
+
+  .navbar-invisibility img {
+    right: 110px;
+    margin-top: 5px;
+    width: 22px;
+  }
+
+  .navbar-invisibility p {
+    right: 103px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0 5px;
+  }
+}
+
+@media (max-width: 1370px) {
+  .dropdown {
+    padding: 10px 90px;
+  }
+
+  .content {
+    padding: 0 90px;
+  }
+
+  .product-list {
+    margin-left: 200px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 40px;
+    row-gap: 5px;
+  }
+
+  .navbar-invisibility img {
+    right: 100px;
+    margin-top: 5px;
+    width: 22px;
+  }
+
+  .navbar-invisibility p {
+    right: 93px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0 5px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .dropdown {
+    padding: 10px 60px;
+  }
+
+  .content {
+    padding: 0 60px;
+  }
+
+  .product-list {
+    margin-left: 190px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .navbar-invisibility img {
+    right: 70px;
+    margin-top: 5px;
+    width: 22px;
+  }
+
+  .navbar-invisibility p {
+    right: 63px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0 5px;
+  }
+
+  .menu-product-text {
+    margin: 20px 60px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .dropdown {
+    padding: 10px 50px;
+  }
+
+  .content {
+    padding: 0 50px;
+  }
+
+  .product-list {
+    margin-left: 180px;
+  }
+
+  .navbar-invisibility img {
+    right: 60px;
+    margin-top: 5px;
+    width: 22px;
+  }
+
+  .navbar-invisibility p {
+    right: 53px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0 5px;
+  }
+
+  .menu-product-text {
+    margin: 20px 50px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .dropdown {
+    padding: 10px 30px;
+  }
+
+  .content {
+    padding: 0 30px;
+  }
+
+  .product-list {
+    margin-left: 170px;
+    column-gap: 40px;
+    row-gap: 0;
+  }
+
+  .navbar-invisibility img {
+    right: 40px;
+    margin-top: 5px;
+    width: 22px;
+  }
+
+  .navbar-invisibility p {
+    right: 33px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0 5px;
+  }
+
+  .menu-product-text {
+    margin: 20px 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dropdown {
+    padding: 10px 40px;
+  }
+
+  .content {
+    padding: 0 40px;
+  }
+
+  .product-list {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    margin-left: 170px;
+  }
+
+  .navbar-invisibility img {
+    right: 50px;
+    margin-top: 5px;
+    width: 22px;
+  }
+
+  .navbar-invisibility p {
+    right: 43px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0 5px;
+  }
+}
+
+@media (max-width: 950px) {
+  .dropdown {
+    padding: 10px 30px;
+  }
+
+  .content {
+    padding: 0 30px;
+  }
+
+  .product-list {
+    column-gap: 30px;
+  }
+
+  .navbar-invisibility img {
+    right: 40px;
+    margin-top: 5px;
+    width: 22px;
+  }
+
+  .navbar-invisibility p {
+    right: 33px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0 5px;
+  }
+}
+
+@media (max-width: 800px) {
+  .dropdown {
+    padding: 10px 30px 0 30px;
+    overflow: visible;
+  }
+
+  .content {
+    padding: 10px 20px;
+  }
+
+  .navbar-invisibility a {
+    display: none;
+  }
+
+  .navbar-invisibility p {
+    display: none;
+  }
+
+  .dropdown img {
+    display: block;
+    margin: 4px 0 0 -30px;
+    padding: 0 0 17px 40px;
+  }
+
+  .dropdown ul {
+    padding: 0;
+  }
+
+  .dropdown ul a {
+    font-size: 20px;
+    color: black;
+    padding: 10px 30px;
+  }
+
+  .dropdown ul a:hover {
+    color: #726f6f;
+  }
+
+  .dropdown ul a:focus {
+    background-color: #5993bb;
+    color: #fff;
+  }
+
+  .dropdown ul .correction-indent-up {
+    margin-top: -10px;
+  }
+  .dropdown ul .correction-indent-up-down {
+    margin: -10px 0;
+  }
+  .dropdown ul hr {
+    margin: 10px 0;
+  }
+
+  .menu {
+    display: grid;
+    grid-template-areas:
+      "A A A A    A A A A    A A A A"
+      "B B B B    B B B B    B B B B";
+  }
+  .box-1 {
+    grid-area: A;
+  }
+  .box-2 {
+    grid-area: B;
+  }
+  .box-3 {
+    grid-area: C;
+  }
+
+  .product-list {
+    margin-left: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    row-gap: 0;
+  }
+
+  .menu-product-text {
+    margin: 20px 0;
+    padding-left: 10px;
+  }
+
+  .footer-decoration {
+    padding: 10px 70px;
+  }
+}
+
+@media (max-width: 710px) {
+  .product-list {
+    column-gap: 30px;
+  }
+
+  .product-list .card {
+    margin: 15px 0;
+  }
+}
+
+@media (max-width: 630px) {
+  .dropdown {
+    padding: 10px 20px;
+  }
+
+  .dropdown img {
+    padding: 0 0 17px 30px;
+    margin: 5px 0 -10px -20px;
+  }
+
+  .content {
+    padding: 0 20px;
+  }
+
+  .product-list {
+    column-gap: 20px;
+  }
+
+  .product-list .card {
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .dropdown {
+    padding: 10px 30px;
+  }
+
+  .content {
+    padding: 0 30px;
+  }
+
+  .dropdown img {
+    padding: 0 0 17px 40px;
+    margin: 5px 0 -10px -30px;
+  }
+
+  .product-list {
+    margin-left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 0;
+  }
+
+  .product-list .card {
+    margin: 15px 0;
+  }
+
+  .footer-decoration {
+    padding: 15px 60px;
+  }
+}
+
+@media (max-width: 450px) {
+  .dropdown {
+    padding: 10px 20px;
+  }
+
+  .content {
+    padding: 0 20px;
+  }
+
+  .dropdown img {
+    padding: 0 0 17px 30px;
+    margin: 5px 0 -10px -20px;
+  }
+
+  .product-list {
+    margin-left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 0;
+  }
+
+  .product-list .card {
+    margin: 10px 0;
+  }
+}
