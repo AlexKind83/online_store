@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'store.apps.StoreConfig',
+    'cart.apps.CartConfig',
     ]
 
 MIDDLEWARE = [
@@ -139,3 +140,6 @@ LOGOUT_URL = 'logout'
 
 # Упрощенный вариант отправки электронной почты используя почтовый бэкенд.
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Ключ корзины в пользовательском сеансе
+CART_SESSION_ID = 'cart'
